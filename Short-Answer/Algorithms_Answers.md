@@ -6,9 +6,13 @@ a)
 
 > **O(n)**
 
-> At first glance, the thought is `O(n*n*n)`, but evaluation of the operation in the loop changes things. The operation adds `n*n` to an accumulator (a) every iteration. because `n*n` is part of the iteration evaluation of `n*n*n`, we can factor that portion out to a constant `1`. O(1\*n) == O(n)
+> At first glance, the thought is `O(n*n*n)`, but evaluation of the operation in the loop changes things. The operation adds `n*n` to an accumulator (a) every iteration. because `n*n` is part of the iteration evaluation of `n*n*n`, we can factor that portion out to a constant `1`. As a result, we can rewrite as `O(1*n)` and further condense to `O(n)`.
 
 b)
+
+> **O(n(log n))**
+
+> I initially thought this was `O(n*n)`, but I can see that the inner loop reduces the number of iterations exponentially by adding `2*j`. As a result, I chose `O(n(log n))` as the number of iterations will be greater than `O(n)`, but less than `O(n*n)`
 
 c)
 
