@@ -16,4 +16,8 @@ b)
 
 c)
 
+> **O(n)**
+
+> A recursive algorithm that reduces the input by `1` for each call to the itself, and no more calls to itself is inherently `O(n)`. As this function doesn't do anything to the input within, it will run `O(n)` times.
+
 ## Exercise II
