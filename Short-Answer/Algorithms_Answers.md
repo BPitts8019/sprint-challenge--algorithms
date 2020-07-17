@@ -21,3 +21,19 @@ c)
 > A recursive algorithm that reduces the input by `1` for each call to the itself, and no more calls to itself is inherently `O(n)`. As this function doesn't do anything to the input within, it will run `O(n)` times.
 
 ## Exercise II
+
+> I would use a binary-search algorithm
+
+```
+- Are min and max search heights the same?
+    - Yes: We've found the heighest floor
+
+    - Otherwise...
+- set floor f to 1/2 of max search height and min search height
+- Drop and egg
+- Did the egg break?
+    - YES: reduce the max search height to 1 less than floor
+    - NO: increase min search height to 1 more that floor
+- Repeat
+
+```
