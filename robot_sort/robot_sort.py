@@ -94,15 +94,7 @@ class SortingRobot:
         """
         return self._light == "ON"
 
-    def sort(self):
-        """
-        Sort the robot's list.
-        """
-        # pickup first item
-
-        ### Main Loop ###
-        # loop while can move right
-
+    def find_least_item(self):
         #    ### find least item ###
         #    loop while can move right
         #        move right
@@ -110,9 +102,18 @@ class SortingRobot:
         #        if other is less
         #            swap items
         #    -- end loop --
+        """
+        Finds the smallest item from current position to the end of the list
+        """
+        while self.can_move_right():
+            self.move_right()
+            if self.compare_item() == 1:
+                self.swap_item()
 
+        self.set_light_on()
+
+    def place_item_at_empty_slot(self):
         #    ### return to empty slot ###
-        #    turn light on
         #    loop while light is on
         #        move left
         #        compare items
@@ -121,6 +122,26 @@ class SortingRobot:
         #            turn light off
         #    -- end loop --
         # -- End main loop --
+        """
+        Returns current item to the empty slot
+        """
+        while self.light_is_on():
+            self.move_left()
+            if self.compare_item() is None:
+                self.swap_item()
+                self.set_light_off()
+
+    def sort(self):
+        """
+        Sort the robot's list.
+        """
+        # pickup first item
+        self.swap_item()
+
+        ### Main Loop ###
+        while self.can_move_right():
+            self.find_least_item()
+            self.place_item_at_empty_slot()
 
 
 if __name__ == "__main__":
