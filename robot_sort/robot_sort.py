@@ -100,23 +100,27 @@ class SortingRobot:
         """
         # pickup first item
 
-        ### find least item ###
+        ### Main Loop ###
         # loop while can move right
-        #     move right
-        #     compare items
-        #     if other is less
-        #         swap items
-        # -- end loop --
 
-        ### return to empty slot ###
-        # turn light on
-        # loop while light is on
-        #     move left
-        #     compare items
-        #     if other is None
-        #         swap items
-        #         turn light off
-        # -- end loop --
+        #    ### find least item ###
+        #    loop while can move right
+        #        move right
+        #        compare items
+        #        if other is less
+        #            swap items
+        #    -- end loop --
+
+        #    ### return to empty slot ###
+        #    turn light on
+        #    loop while light is on
+        #        move left
+        #        compare items
+        #        if other is None
+        #            swap items
+        #            turn light off
+        #    -- end loop --
+        # -- End main loop --
 
 
 if __name__ == "__main__":
